@@ -3,6 +3,7 @@ import json
 import os
 from datetime import datetime
 import argparse
+import sys
 
 from loguru import logger
 from tqdm.auto import tqdm
@@ -92,7 +93,9 @@ if __name__ == "__main__":
 
     parser.add_argument("--model_name", type=str, default="vanilla_baseline",
                         choices=["vanilla_baseline",
-                                 "rag_baseline"
+                                 "rag_baseline",
+                                 "knn_LM",
+                                 "base_LM"
                                  # add your model here
                                  ],
                         )
@@ -130,8 +133,14 @@ if __name__ == "__main__":
     elif model_name == "rag_baseline":
         from rag_baseline import RAGModel
         model = RAGModel(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server)
-    # elif model_name == "your_model":
-    #     add your model here
+    elif model_name == "knn_LM":
+        from knn_lm import KNNLM
+        model = KNNLM(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server, dataset_path=dataset_path)
+        # model.build_datastore()
+        # sys.exit(0)
+    elif model_name == "base_LM":
+        from base_lm import BaseLM
+        model = BaseLM(llm_name=llm_name, is_server=args.is_server, vllm_server=args.vllm_server, dataset_path=dataset_path)
     else:
         raise ValueError("Model name not recognized.")
 
