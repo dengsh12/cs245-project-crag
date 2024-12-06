@@ -49,7 +49,8 @@ class EvaluationModel:
                 gpu_memory_utilization=VLLM_GPU_MEMORY_UTILIZATION,
                 trust_remote_code=True,
                 dtype="half",  # note: bfloat16 is not supported on nvidia-T4 GPUs
-                enforce_eager=True
+                enforce_eager=True,
+                max_model_len=8192
             )
             self.tokenizer = self.llm.get_tokenizer()
 
@@ -106,6 +107,7 @@ class EvaluationModel:
                     temperature=0.1,  # randomness of the sampling
                     skip_special_tokens=True,  # Whether to skip special tokens in the output.
                     max_tokens=50,  # Maximum number of tokens to generate per output sequence.
+                    max_model_len=8192
                 ),
                 use_tqdm = False
             )

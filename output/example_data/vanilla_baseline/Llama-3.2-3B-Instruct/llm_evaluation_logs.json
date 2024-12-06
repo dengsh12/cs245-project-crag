@@ -1,0 +1,26 @@
+[
+    {
+        "query": "is microsoft office 2019 available in a greater number of languages than microsoft office 2013?",
+        "ground_truth": "yes",
+        "prediction": "Yes, Microsoft Office 2019 is available in 204 languages, while Microsoft Office 2013 is available in 157 languages.",
+        "response": "False"
+    },
+    {
+        "query": "name three celebrities who have been involved in successful collaborations with beauty brands.",
+        "ground_truth": "three celebrities who have been involved in successful collaborations with beauty brands are jennifer aniston (lolavie), kim kardashian (skkn), and selena gomez (rare).",
+        "prediction": "1. Taylor Swift (Kylie Cosmetics)\n2. Lady Gaga (Fendi Beauty)\n3. Rihanna (Fenty Beauty)",
+        "response": "Accuracy: True"
+    },
+    {
+        "query": "how many times has rory mcilroy won the masters tournament?",
+        "ground_truth": "rory mcilroy has never won the masters tournament, despite being one of the most successful golfers on the pga tour.",
+        "prediction": "Rory McIlroy has won the Masters once, in 2011.",
+        "response": "Accuracy: False"
+    },
+    {
+        "query": "is dreamworks animation owned by time warner or universal pictures?",
+        "ground_truth": "universal pictures",
+        "prediction": "DreamWorks Animation is owned by Comcast (NBCUniversal).",
+        "response": "Accuracy: False"
+    }
+]

@@ -78,7 +78,9 @@ if __name__ == "__main__":
 
     parser.add_argument("--model_name", type=str, default="vanilla_baseline",
                         choices=["vanilla_baseline",
-                                 "rag_baseline"
+                                 "rag_baseline",
+                                 "knn_LM",
+                                 "base_LM"
                                  # add your model here
                                  ],
                         )
